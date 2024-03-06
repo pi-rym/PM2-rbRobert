@@ -1,38 +1,24 @@
-class PeliculasRepositorio {
-    constructor(tempData){
-        this.tempData = tempData;
-    }
-    listarPeliculas(){
-        return this.tempData;
-    }
-}
+const contenedorPadre = document.getElementById('contenedorPadre');
 
-const peliculasRepositorio = new PeliculasRepositorio(tempData);
-
-function CrearHtml(tempData) {
-    const {title, year, director, duration, poster} = tempData;
-
+function renderizarPelicula(pelicula) {
+    
     const titulo = document.createElement('h4');
-    titulo.textContent = title;
+    titulo.textContent = pelicula.title;
 
     const año = document.createElement('h5');
-    año.textContent = year;
-    //año.classList.add('contenido');
+    año.textContent = pelicula.year;
 
     const _director = document.createElement('h5');
-    _director.textContent = director;
-    //_director.classList.add('contenido');
+    _director.textContent = pelicula.director;
 
     const duracion = document.createElement('h5');
-    duracion.textContent = duration;
-    //duracion.classList.add('contenido');
+    duracion.textContent = pelicula.duration;
 
     const imagen = document.createElement('img');
-    imagen.src = poster;
+    imagen.src = pelicula.poster;
     imagen.classList.add('imagenes');
 
     const cuerpoTarjeta = document.createElement('div');
-    //cuerpoTarjeta.classList.add('cuerpo');
     cuerpoTarjeta.appendChild(imagen);
     cuerpoTarjeta.appendChild(_director);
     cuerpoTarjeta.appendChild(duracion);
@@ -40,29 +26,15 @@ function CrearHtml(tempData) {
 
     const tituloTarjeta = document.createElement('div');
     tituloTarjeta.appendChild(titulo);
-    //tituloTarjeta.classList.add('titulo');
 
     const tarjeta = document.createElement('div');
     tarjeta.appendChild(tituloTarjeta);
     tarjeta.appendChild(cuerpoTarjeta);
     tarjeta.classList.add('contenedorPrincipal');
     
-    return tarjeta;
+    contenedorPadre.appendChild(tarjeta);
 }
 
-function renderizarListaPeliculas() {
-    const contenedor = document.getElementById('contenedorPadre');
-    
-    contenedor.innerHTML = "";
-    
-    const peliculas = peliculasRepositorio.listarPeliculas();
-    const elementosPeliculas = peliculas.map(CrearHtml);
+tempData.forEach(renderizarPelicula);
 
-    elementosPeliculas.forEach((peliculas) => {
-        contenedor.appendChild(peliculas);
-    });
-
-}
-
-window.onload = renderizarListaPeliculas;
 
