@@ -9,37 +9,81 @@
   color: rgb(51, 114, 0);
 }
 
-.liHorizontal {
-  list-style-type: none;
-  padding: 0;
-  text-align: center;
+.h_4 {
+  padding: 8px 0px 0px 0px;
+  font-size: 13px;  
 }
 
-.liHorizontal li {
-  display: inline-block;
-  margin-right: 160px; 
-  margin-bottom: 20px;
-  margin-top: 20px;
-  text-align: center;
+.h_5 {
+  font-size: 13px;
 }
 
-.liHorizontal li a {
-  text-decoration: none;
-  font-size: 26px;
+.contenedorPrincipal:hover .h_4 {
+  padding: 26px 0px 0px 0px;
+  font-size: 15px; /* Aumenta el tamaño del texto al 120% */
+}
+
+.contenedorPrincipal:hover .h_5 {
+  padding: 0px 0px 0px 0px;
+  font-size: 14px; /* Aumenta el tamaño del texto al 120% */
+}
+.parrafos {
+  font-size: 15px; /* Tamaño de la fuente */
+  margin: 0px; /* Margen inferior */
+  padding: 0px; /* Relleno interno */
+}
+
+
+
+
+
+
+.ulHorizontal {
+  display: flex; /* Utiliza flexbox */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
+  /*list-style-type: none; /* Quita los estilos de viñeta de la lista */
+  padding: 0; /* Elimina el relleno predeterminado de la lista */
+  margin: 0; /* Elimina el margen predeterminado de la lista */
+}
+
+.ulHorizontal li {
+  flex: 1 0 11%; /* Divide el espacio disponible entre los elementos de manera equitativa */
+  /* Nota: 100% / 8 = 12.5% */
+  text-align: center; /* Centra el texto dentro de cada elemento de la lista */
+}
+
+.ulHorizontal li a {
   font-weight: bold;
+  font-size: 28px;
+  /*display: block; /* Hace que los enlaces ocupen todo el espacio disponible en sus elementos contenedores */
+  padding: 10px; /* Agrega relleno para mejorar la apariencia visual */
+  text-decoration: none; /* Quita el subrayado predeterminado de los enlaces */
+  border-radius: 5px;
+  /*color: #000; /* Color del texto */
+  /*border: 3px solid #ccc; /* Agrega un borde a cada elemento de la lista */
+  border-width: 0 5px 0 5px;
+  border-style: solid;
+  border-color: transparent  #0D6EFD transparent  #0D6EFD;
 }
 
-a:hover {
+
+
+
+.ulHorizontal li a:hover {
+  text-decoration: solid;
   font-weight: bold;
   color: rgb(154, 223, 255);
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   font-weight: 900;  
   font-size: 35px;
   transform: translate(0.9px, 0.9px);
+  border-width: 0 5px 0 5px;
+  border-style: solid;
+  border-color: transparent  rgb(154, 223, 255) transparent  rgb(154, 223, 255);
 }
 
 .imagenes {
-  width: 220px;
+  width: 240px;
   height: 200px;
 }
 
@@ -56,12 +100,31 @@ a:hover {
   text-align: center;
 }
 
+.contenedorPadre img {
+  width: 220px;
+  height: 200px;
+}
+
 .contenedorPrincipal {
-  margin: 20px 0px 20px 0px;
+  margin: 10px 0px 10px 0px;
   width: 350px;
   height: 400px;
   border: 2px solid #0408fa;
   border-radius: 10px;
-  padding: 30px;
+  padding: 10px;
   text-align: center;
 }
+
+.contenedorPrincipal:hover .imagenes {
+  transform: scale(1.2); /* Agranda la imagen al 120% */
+}
+
+.formulario {
+  padding: 0px 800px 0px 100px;
+}
+
+.textoForm {
+  color: rgb(147, 153, 165);
+  font-weight: bold;
+}
+
