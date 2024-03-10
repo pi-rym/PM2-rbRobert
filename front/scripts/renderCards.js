@@ -1,7 +1,7 @@
 
 const SeccionPelicula = document.getElementById('contenedorPadre')
 
-function renderPeliculas(p){
+function renderCards(p){
 //const pelicula = document.createElement("article")
 const containerPeliculas= document.createElement("div")
 
@@ -26,4 +26,4 @@ SeccionPelicula.appendChild(containerPeliculas);
 //pelicula.appendChild(containerPeliculas);
 
 }
-module.exports = renderPeliculas;
+module.exports = renderCards;

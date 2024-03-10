@@ -1,8 +1,7 @@
 module.exports = {
-    mode:'development',
     entry: "./scripts/index.js",
     output: {
-        path: __dirname + "/browser",
+        path: __dirname + "/public",
         filename: "bundle.js",
     },
 }
