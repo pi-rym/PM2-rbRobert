@@ -8,11 +8,11 @@ agregarCarrito.agregarProducto({ nombre: 'Laptop', precio: 4000 });
 agregarCarrito.agregarProducto({ nombre: 'Lavadora', precio: 2300 });
 
 describe('Agregar al Carrito de Compra', () => {
-    it('debería agregar celular', () => {
+    it('debería agregar laptop', () => {
         expect(agregarCarrito.agregarProducto).toHaveBeenCalledWith({ nombre: 'Laptop', precio: 4000 });
     });
 
-    it('debería agregar cargador', () => {
+    it('debería agregar lavadora', () => {
         expect(agregarCarrito.agregarProducto).toHaveBeenCalledWith({ nombre: 'Lavadora', precio: 2300 });
     });
 });
