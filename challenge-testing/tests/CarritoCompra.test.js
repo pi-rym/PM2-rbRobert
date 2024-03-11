@@ -1,87 +1,69 @@
-//const CarritoCompra = require("../index");
-/* const {CarritoCompra, Producto, crearProducto} = require("../index");
+const CarritoCompra  = require('../index');
 
-const mockObtenerDatos = jest.fn(() => {
-    return [
-        {nombreProducto: "Televisor", marca: "Samsumg", precio: 1800},
-        {nombreProducto: "Laptop", marca: "Samsumg", precio: 2500},
-        {nombreProducto: "Lavadora", marca: "General Electric", precio: 2000},
-    ];
+//agregar producto al Carrito
+const agregarCarrito = new CarritoCompra();
+agregarCarrito.agregarProducto = jest.fn();
+
+agregarCarrito.agregarProducto({ nombre: 'Laptop', precio: 4000 });
+agregarCarrito.agregarProducto({ nombre: 'Lavadora', precio: 2300 });
+
+describe('Agregar al Carrito de Compra', () => {
+    it('debería agregar celular', () => {
+        expect(agregarCarrito.agregarProducto).toHaveBeenCalledWith({ nombre: 'Laptop', precio: 4000 });
+    });
+
+    it('debería agregar cargador', () => {
+        expect(agregarCarrito.agregarProducto).toHaveBeenCalledWith({ nombre: 'Lavadora', precio: 2300 });
+    });
 });
 
-describe("En la clase Productos", () => {
 
-    it("Debera devolverme la lista de Productos", () => {
-        
-        mockObtenerDatos.foreach( (producto) => {
-            const {nombreProducto, marca, precio} = producto;
-            //const carritoCompra = new CarritoCompra();
-            crearProducto(nombreProducto, marca, precio, new CarritoCompra());
-            console.log(producto);
-        });
-        console.log(mockObtenerDatos);
-        expect(mockObtenerDatos).toEqual(CarritoCompra.productos);
-    });
+//calcular el total
+const calcularCarrito = new CarritoCompra();
+//CalcularCarrito.agregarProductos = jest.fn();
 
-    xit("Debe calcular el total en una factura con varios items", () => {
-        expect(calcularTotal([
-            {name: "Producto A", price: 10, quantity: 2},
-            {name: "Producto B", price: 20, quantity: 3},
-            {name: "Producto C", price: 30, quantity: 4},
-        ])).toEqual(200);  
-    });
+calcularCarrito.agregarProducto({ nombre: 'Laptop', precio: 4000 });
+calcularCarrito.agregarProducto({ nombre: 'Lavadora', precio: 2300 });
+calcularCarrito.agregarProducto({ nombre: 'Television', precio: 1800 });
 
-    xit("Debe arrojar un error 'factura invalida' en caso de recibir un arreglo vacio", () => {
-        expect(() => calcularTotal([])).toThrowError("Factura Invalida");
-    })
-
-}); */
-
-const {CarritoCompra, Producto, crearProducto} = require("../index");
-
-describe('CarritoCompra', () => {
-    // let carritoCompras;
-
-    // beforeEach(() => {
-    //     carritoCompras = new CarritoCompra();
-    // });
-
-    it('debería agregar productos correctamente', () => {
-        const producto1 = new Producto(1, 'Producto 1', 'Marca 1', 10);
-        const producto2 = new Producto(2, 'Producto 2', 'Marca 2', 20);
-
-        carritoCompras.agregarProducto(producto1);
-        carritoCompras.agregarProducto(producto2);
-
-        expect(carritoCompras.productos.length).toBe(2);
-    });
-
+describe('calcular total Carrito de Compra', () => {
     it('debería calcular el total correctamente', () => {
-        const producto1 = new Producto(1, 'Producto 1', 'Marca 1', 10);
-        const producto2 = new Producto(2, 'Producto 2', 'Marca 2', 20);
-
-        carritoCompras.agregarProducto(producto1);
-        carritoCompras.agregarProducto(producto2);
-
-        expect(carritoCompras.calcularTotal()).toBe(30);
-    });
-
-    it('debería aplicar el descuento correctamente', () => {
-        const producto1 = new Producto(1, 'Producto 1', 'Marca 1', 10);
-        const producto2 = new Producto(2, 'Producto 2', 'Marca 2', 20);
-
-        carritoCompras.agregarProducto(producto1);
-        carritoCompras.agregarProducto(producto2);
-
-        expect(carritoCompras.aplicarDescuento(10)).toBe(27); // 10% de descuento sobre 30 es 27
+        expect(calcularCarrito.calcularTotal()).toBe(8100);
     });
 });
 
 
-describe('crearProducto', () => {
-    it('debería crear un producto y agregarlo al carrito', () => {
-        crearProducto('Nuevo Producto', 'Nueva Marca', 15);
-        expect(carrito.productos.length).toBe(1);
-        expect(carrito.productos[0].nombreProducto).toBe('Nuevo Producto');
+//aplicando el descuento
+const calcularDescuento = new CarritoCompra();
+//CalcularDescuento.agregarProductos = jest.fn();
+
+calcularDescuento.agregarProducto({ nombre: 'Laptop', precio: 4000 });
+calcularDescuento.agregarProducto({ nombre: 'Lavadora', precio: 2300 });
+calcularDescuento.agregarProducto({ nombre: 'Television', precio: 1800 });
+calcularDescuento.calcularTotal();
+calcularDescuento.aplicarDescuento(10);
+
+describe('calcular descuento del Carrito de Compra', () => {
+    it('debería calcular el descuento total correctamente', () => {
+        expect(calcularDescuento.aplicarDescuento(10)).toBe(7290);
     });
 });
+
+// devolver la lista de productos
+const listaProductos = new CarritoCompra();
+
+listaProductos.agregarProducto({ producto: 'Producto 1', marca: 'Marca 1', precio: 10 });
+listaProductos.agregarProducto({ producto: 'Producto 2', marca: 'Marca 2', precio: 20 });
+listaProductos.agregarProducto({ producto: 'Producto 3', marca: 'Marca 3', precio: 30 });
+
+describe('devuelve la lista de productos', () => {
+    it('debería devolver la lista de productos', () => {
+        expect(listaProductos.productos).toEqual([
+            {producto: 'Producto 1', marca: 'Marca 1', precio: 10},
+            {producto: 'Producto 2', marca: 'Marca 2', precio: 20},
+            {producto: 'Producto 3', marca: 'Marca 3', precio: 30}
+        ]);
+        console.log(listaProductos.productos);
+    });
+});
+

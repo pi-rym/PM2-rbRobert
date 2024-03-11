@@ -32,27 +32,36 @@
     <main>
       <section>
         <article>
-          <form class="formulario">
+          <form id="form" class="formulario mb-3 needs-validation m-5" novalidate>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label textoForm">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <!--<div id="emailHelp" class="textoForm form-text">We'll never share your email with anyone else.</div>-->
+              <label for="name" class="form-label textoForm">Nombre:</label>
+              <input type="text" id="name" name="name" class="form-control" required>
+              <div class="invalid-feedback">
+                Por favor ingrese su email
+              </div>
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label textoForm">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <label for="email" class="form-label textoForm">Email:</label>
+              <input type="email" id="email" name="email" class="form-control" required>
+              <div class="invalid-feedback">
+                Por favor ingrese su correo electronico
+              </div>
             </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label textoForm" for="exampleCheck1">Check me out</label>
+            <div class="mb-3">
+              <label for="message" class="form-label textoForm">Mensaje:</label>
+              <textarea type="email" id="message" name="message" row="4" class="form-control" required></textarea>
+              <div class="invalid-feedback">
+                Por favor ingresa un mensaje
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
           </form>
         </article>
       </section>
     </main>
     <footer></footer>
 
+    <script src="../scripts/contact.js"></script> 
     <!-- <script src="../front/scripts/tempData.js"></script> -->
     <!-- <script src="../front/scripts/index.js"></script> -->
   </body>
