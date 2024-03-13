@@ -12,6 +12,7 @@ const axios = require("axios");
 // }
 // fetchData()
 
+console.log(axios.get('https://students-api.up.railway.app/movies'));
 axios.get('https://students-api.up.railway.app/movies')
      .then((response) => {
        console.log("Respuesta exitosa.", response);
@@ -31,3 +32,4 @@ axios.get('https://students-api.up.railway.app/movies')
 // })
 
 // ! final 
+// ?
