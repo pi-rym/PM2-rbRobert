@@ -17,14 +17,14 @@
   </head>
   <body class="cuerpo">
     <header>
-      <h1 class="h_1">Contacto</h1>
+      <h1 class="h_1">Crear Pelicula</h1>
       <hr class="border border-primary border-3 opacity-75">
       <nav>
         <ul class="ulHorizontal">
           <li><a href="../index.html">Home</a></li> 
           <li><a href="../pages/movies.html">Movies</a></li>
           <li><a href="../pages/about.html">About Us</a></li>
-          <li><a href="../pages/createMovie.html">Create Movie</a></li>
+          <li><a href="../pages/contacto.html">Contacto</a></li>
         </ul>
       </nav>
       <hr class="border border-primary border-3 opacity-75">
@@ -34,27 +34,57 @@
         <article>
           <form id="form" class="formulario mb-3 needs-validation m-5" novalidate>
             <div class="mb-3">
-              <label for="name" class="form-label textoForm">Nombre:</label>
-              <input type="text" id="name" name="name" class="form-control" required>
+              <label for="name" class="form-label textoForm">Poster:</label>
+              <input type="text" id="name01" name="name" class="form-control" required>
               <div class="invalid-feedback">
-                Por favor ingrese su email
+                Por favor ingrese el link poster
               </div>
             </div>
             <div class="mb-3">
-              <label for="email" class="form-label textoForm">Email:</label>
-              <input type="email" id="email" name="email" class="form-control" required>
+              <label for="name" class="form-label textoForm">Titulo:</label>
+              <input type="text" id="name02" name="name" class="form-control" required>
               <div class="invalid-feedback">
-                Por favor ingrese su correo electronico
+                Por favor ingrese el titulo
               </div>
             </div>
             <div class="mb-3">
-              <label for="message" class="form-label textoForm">Mensaje:</label>
-              <textarea type="email" id="message" name="message" row="4" class="form-control" required></textarea>
+              <label for="name" class="form-label textoForm">Director:</label>
+              <input type="text" id="name03" name="name" class="form-control" required>
               <div class="invalid-feedback">
-                Por favor ingresa un mensaje
+                Por favor ingrese director
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <div class="mb-3">
+              <label for="name" class="form-label textoForm">Duracion:</label>
+              <input type="text" id="name04" name="name" class="form-control" required>
+              <div class="invalid-feedback">
+                Por favor ingrese duracion
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label textoForm">Año:</label>
+              <input type="number" id="name05" name="name" class="form-control" required>
+              <div class="invalid-feedback">
+                Por favor ingrese año
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label textoForm">Calificacion:</label>
+              <input type="number" id="name06" name="name" class="form-control" required>
+              <div class="invalid-feedback">
+                Por favor ingrese calificacion
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label textoForm">Genero:</label>
+              <input type="text" id="name07" name="name" class="form-control" required>
+              <div class="invalid-feedback">
+                Por favor ingrese genero
+              </div>
+            </div> 
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button id="boton" type="submit" class="btn btn-primary">Limpiar Formulario</button>
           </form>
         </article>
       </section>
