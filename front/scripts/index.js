@@ -1,7 +1,6 @@
 const renderCards = require('./renderCards');
 const axios = require("axios");
 
-console.log(axios.get('http://localhost:3000/movies'));  // http://localhost:3000/movies
 axios.get('http://localhost:3000/movies')   
      .then((response) => {
        console.log("Respuesta exitosa.", response);
@@ -13,4 +12,3 @@ axios.get('http://localhost:3000/movies')
      .catch((error) => {
        console.error("Error al realizar la peticion.", error.message);
      });
-

@@ -4,6 +4,6 @@ const validaMovie = require('../middlewares/validaMovie');
 
 const movieRouter = Router();
 movieRouter.get('/', movieController);
-movieRouter.post('/', validaMovie, createMovieController);
+movieRouter.post('/',validaMovie, createMovieController);
 
 module.exports = movieRouter;
