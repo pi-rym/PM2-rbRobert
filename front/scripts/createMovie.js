@@ -8,9 +8,7 @@ const axios = require("axios");
   
     // Loop over them and prevent submission
     Array.prototype.slice.call(forms).forEach(function (form) {
-      form.addEventListener(
-        "submit",
-        function (event) {
+      form.addEventListener("submit", function (event) {
           if (!form.checkValidity()) {
             event.preventDefault();
             event.stopPropagation();
